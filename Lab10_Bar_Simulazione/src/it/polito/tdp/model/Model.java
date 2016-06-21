@@ -10,7 +10,6 @@ import java.util.Random;
 
 public class Model {
 
-	//questa lista in realtà potevo anche non definirla,non è servita molto
 	private List<Table> tables;
 	/*
 	 * OSS: ora definisco anche una mappa che mi associ i tavoli ai gruppi, perchè
@@ -108,6 +107,31 @@ public class Model {
 		
 		return tmin;//OSS:se non c'è nessun tavolo restituisce null
 	}
+	
+/*	
+	private Table findAvailableTable(int numPersone) {
+
+		int postiTavoloMin = Integer.MAX_VALUE;//RIC:così di sicuro ho valori minori
+		Table returnTable = null;
+
+		// Itero su tutti i tavoli
+		for (Table t : tables) {
+
+			// Controllo i requisiti minimi
+			if (t.isLibero() && g.getNumPersone() >= 0.5 * t.getNumPosti()) {
+
+				// Cerco il tavolo con il minimo numero di posti a sedere
+				if (postiTavoloMin > t.getNumPosti()) {
+					returnTable = t;
+					postiTavoloMin = t.getNumPostiASedere();
+				}
+			}
+		}
+
+		return returnTable;
+	}
+*/
+	
 	
 	public Statistics getStats(){
 		return stats;
